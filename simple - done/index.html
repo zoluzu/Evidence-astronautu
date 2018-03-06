@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src = "control.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myController">
+        <ul>
+            <li>Jméno</li>
+            <li><input type="text" ng-model="name" /></li>
+        </ul>
+        <ul>
+            <li>Příjmení</li>
+            <li><input type="text" ng-model="surname" /></li>
+		</ul>
+		<ul>
+			<li>Datum narození</li>
+			<li><input type="text" ng-model="date" /></li>
+		</ul>
+		<ul>
+			<li>Superschopnost</li>
+			<li><input type="text" ng-model="superpower" /></li>
+			</ul>
+        <ul>
+            <li></li><li><button ng-click="addRow()"> Přidat </button></li>
+        </ul>
+
+        <!--CREATE A TABLE-->
+        <table> 
+            <tr>
+                <th>Jméno</th>
+					<th>Příjmení</th>
+						<th>Datum narození</th>
+							<th>Superchopnost</th>
+            </tr>
+
+            <tr ng-repeat="astronauts in astronautsArray">
+                <td><label>{{astronauts.name}}</label></td>
+				<td><label>{{astronauts.surname}}</label></td>
+				<td><label>{{astronauts.date}}</label></td>
+				<td><label>{{astronauts.superpower}}</label></td>
+                <td><input type="checkbox" ng-model="astronauts.Remove"/></td>
+            </tr>
+        </table>
+
+        <div>
+                <button ng-click="removeRow()">Smazat řádek</button>
+        </div>
+
+        <div id="display" style="padding:10px 0;">{{display}}</div>
+    </div>
+</body>
+<script>
+		
+	</script>
+	</html>
