@@ -1,7 +1,6 @@
 var app = angular.module('myApp', []);
 app.controller('myController', function ($scope) {
 
-    // JSON ARRAY TO POPULATE TABLE.
     $scope.astronautsArray =
     [
         { 'name': 'Niel', 'surname': 'Armstrong', 'date' : '5.8.1930', 'superpower' : 'Speed' },
@@ -9,7 +8,6 @@ app.controller('myController', function ($scope) {
         { 'name': 'Charles', 'surname': 'Duke', 'date' : '3.10.1935', 'superpower' : 'Vitality' }
     ];
 
-    // GET VALUES FROM INPUT BOXES AND ADD A NEW ROW TO THE TABLE.
     $scope.addRow = function () {
         if ($scope.name != undefined && $scope.surname != undefined && $scope.date != undefined && $scope.superpower != undefined) {
             var astronaut = [];
@@ -20,7 +18,6 @@ app.controller('myController', function ($scope) {
 
             $scope.astronautsArray.push(astronaut);
 
-            // CLEAR TEXTBOX.
             $scope.name = null;
             $scope.surname = null;
             $scope.date = null;
@@ -28,7 +25,6 @@ app.controller('myController', function ($scope) {
         }
     };
 
-    // REMOVE SELECTED ROW(s) FROM TABLE.
     $scope.removeRow = function () {
         var arrAstronauts = [];
         angular.forEach($scope.astronautsArray, function (value) {
