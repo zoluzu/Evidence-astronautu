@@ -24,10 +24,9 @@
 			<li><input type="text" ng-model="superpower" /></li>
 			</ul>
         <ul>
-            <li></li><li><button ng-click="addRow()"> Přidat </button></li>
+            <li><button ng-click="addRow()"> Přidat </button></li>
         </ul>
 
-        <!--CREATE A TABLE-->
         <table> 
             <tr>
                 <th>Jméno</th>
@@ -48,8 +47,6 @@
         <div>
                 <button ng-click="removeRow()">Smazat řádek</button>
         </div>
-
-        <div id="display" style="padding:10px 0;">{{display}}</div>
     </div>
 </body>
 <script>
